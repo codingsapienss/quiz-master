@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import { Button, MenuItem, TextField,Alert } from "@mui/material";
-import Categories from "../../../Data/category";
+import Categories from "../../../Data/Category.js";
 
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,7 @@ const Home = ({ name, setName,fetchQuestions  }) => {
       }
   }
 
-    console.log(name, category, difficulty)
+    // console.log(name, category, difficulty)
   return (
 
 

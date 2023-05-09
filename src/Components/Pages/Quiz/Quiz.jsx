@@ -21,7 +21,7 @@ const Quiz = ({ name, questions, setQuestions, score, setScore }) => {
     return optionss.sort(() => Math.random() - 0.5);
   };
 
-  console.log(questions);
+  // console.log(questions);
 
   return (
     <div className="quizContainer">
