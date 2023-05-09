@@ -1,0 +1,59 @@
+.quesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: .6rem 0;
+}
+
+
+
+.singleQues{
+    max-width: 600px;
+    width: 90vw;
+    margin-top: 1rem;
+    padding: .8rem;
+    border: 1px solid black;
+    border-radius: .4rem;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    box-shadow: 5px 5px 10px black;
+}
+
+.singleQues h2{
+    text-align: center;
+}
+.alert{
+    width: 80%;
+    margin: auto;
+}
+.options{
+    display: flex;
+    flex-wrap: wrap ;
+    align-items: center;
+    justify-content: center;
+}
+.singleQues button{
+    font-size: 1.4rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 40%;
+    cursor: pointer;
+    margin: .4rem;
+}
+
+.wrong{
+    background-color: red;
+    color: white;
+}
+
+.select{
+    background-color: green;
+    color: white;
+}
+
+.controls{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
