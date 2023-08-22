@@ -31,8 +31,22 @@
 }
 
 @media screen and (max-width: 650px) {
+  .subTitle {
+    font-size: 1.8rem;
+  }
+
   .quizInfo {
     flex-direction: column;
     text-align: center;
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .quizInfo span {
+    margin-top: 5px;
+  }
+
+  .subTitle {
+    margin-bottom: 0.5rem;
   }
 }
