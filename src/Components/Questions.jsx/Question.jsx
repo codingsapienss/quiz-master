@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import "./Question.css"
 import { Alert, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import he from 'he';
 
-const Question = ({currentQues, setCurrentQues,questions, options, score,setScore, correct}) => {
+const Question = ({ setName, currentQues, setCurrentQues, questions, setQuestions, options, score, setScore, correct }) => {
 
 
   const [selected, setSelected] = useState(false)
@@ -11,71 +12,74 @@ const Question = ({currentQues, setCurrentQues,questions, options, score,setScor
 
   const navigate = useNavigate();
 
-  const handleSelect =(i) =>{
-    if(selected === i && selected=== correct){
+  const handleSelect = (i) => {
+    if (selected === i && selected === correct) {
       return 'select'
-    }else if(selected === i && selected !== correct){
+    } else if (selected === i && selected !== correct) {
       return 'wrong'
-    }else if( i === correct ) {
+    } else if (i === correct) {
       return "select"
     }
   }
 
-  const handleQuit = ()=> {
-    
+  const handleQuit = () => {
+    navigate('/')
+    setScore(0)
+    setCurrentQues(0)
+    setQuestions()
+    setName('')
   }
 
-  const handleNext = ()=> {
-    if(currentQues>13){
+  const handleNext = () => {
+    if (currentQues > 13) {
       navigate('/result')
-    } else if(selected){
-      setCurrentQues(currentQues+1)
+    } else if (selected) {
+      setCurrentQues(currentQues + 1)
       setSelected()
       setError(false)
-    }else{
+    } else {
       setError(true)
     }
   }
 
-  const handleCheck = (i)=>{
+  const handleCheck = (i) => {
     setSelected(i);
-    if(i === correct) setScore(score+1)
+    if (i === correct) setScore(score + 1)
     setError(false)
   }
 
   return (
     <div className='quesContainer'>
-      <h1> Question {currentQues+1} </h1>
       <div className="singleQues">
-        <h2>{questions[currentQues].question}</h2>
+        <h2> {currentQues + 1}. {he.decode(questions[currentQues].question)}</h2>
         <div className="alert">
-        { error && <Alert variant="filled" severity="error">Please select an option first !</Alert>}
+          {error && <Alert variant="filled" severity="error">Please select an option first !</Alert>}
 
         </div>
-       
+
         <div className="options">
 
-        {options && 
-          options.map((opt)=>{
-            return <button 
-            onClick={()=>{handleCheck(opt)}} 
-            className={ `singleOption  ${selected && handleSelect(opt)} ` }
-              key={opt}
-              disabled={selected}
-            >{opt}</button>
-          })
-          
-        }
+          {options &&
+            options.map((opt) => {
+              return <button
+                onClick={() => { handleCheck(opt) }}
+                className={`singleOption  ${selected && handleSelect(opt)} `}
+                key={opt}
+                disabled={selected}
+              >{he.decode(opt)}</button>
+            })
+
+          }
 
         </div>
 
         <div className="controls">
-          <Button variant='contained' color="secondary" 
-          size="large" onClick={handleQuit}>Quit</Button>
+          <Button variant='contained' color="secondary"
+            size="medium" onClick={handleQuit}>Quit</Button>
 
 
-          <Button onClick={handleNext} variant='contained' color="primary" 
-          size="large">Next </Button>
+          <Button onClick={handleNext} variant='contained' color="primary"
+            size="medium" >Next </Button>
         </div>
 
       </div>

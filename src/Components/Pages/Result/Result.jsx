@@ -7,8 +7,8 @@ import { Button } from '@mui/material';
 
 const Result = ({
   // name,
-   score}) => {
-  
+  score }) => {
+
   // const navigate = useNavigate();
   // useEffect(()=>{
   //   if(name){
@@ -20,15 +20,15 @@ const Result = ({
   return (
     <div className='result'>
       <span className='title'>Final Score : {score} </span>
-       <Button
+      <Button
         variant="contained"
-        color ="secondary"
+        color="secondary"
         size="large"
-        style={{alignSelf : 'center' , marginTop: 20}}
+        style={{ alignSelf: 'center', marginTop: 20 }}
         href="/"
-       >
+      >
         Go to Home page
-       </Button>
+      </Button>
     </div>
   )
 }

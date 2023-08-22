@@ -32,8 +32,10 @@ const Home = ({ name, setName, fetchQuestions }) => {
 
 
     <div className="container">
+      <img src="./quiz_icon.svg" alt="" />
+
       <div className="setting">
-        Quiz Setting
+        <h3>Quiz Setting</h3>
         <div className="settingsSelect">
 
           {error && <Alert variant="filled" severity="error">Fill all the fields first !</Alert>}
@@ -66,7 +68,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
           <Button onClick={handleSubmit} variant="contained" color="success" >Start Quiz</Button>
         </div>
       </div >
-      <img src="./quiz_icon.svg" alt="" />
+
     </div>
   );
 };

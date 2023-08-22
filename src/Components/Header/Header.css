@@ -1,18 +1,19 @@
-.header{
-    margin: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-weight: 600;
+.header {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 600;
 }
 
-.title{
-    font-size: 3rem;
-    text-decoration: none;
+.title {
+  font-size: 3rem;
+  text-decoration: none;
+  text-align: center;
 }
 
-.divider{
-    width: 100%;
-    margin-top: .5rem;
+.divider {
+  width: 100%;
+  margin-top: 0.5rem;
 }

@@ -1,36 +1,55 @@
-.container{
-     display: flex;
-     justify-content:space-around;
-     margin: auto;
-     width: 95vw;
-     max-width: 700px;
-     border: 1px solid rgb(0, 0, 0);
-     border-radius: .5rem;
-     box-shadow: 5px 5px 10px black;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  width: 95vw;
+  max-width: 800px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 10px black;
 }
 
-.setting{
-    font-size: 2rem;
-    padding: 1rem;
-    font-weight: 400;
-    display: flex;
+.setting {
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  /* text-align: center; */
+
+  /* border: 1px solid black; */
+}
+
+img {
+  width: 40%;
+  padding: 2rem 0;
+  /* border: 1px solid black; */
+}
+
+.settingsSelect {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
     flex-direction: column;
-    width: 60%;
-    /* text-align: center; */
+  }
+  .setting {
+    width: 95%;
+    margin: auto;
+  }
 
-    /* border: 1px solid black; */
-}
-
-img{
-    width: 40%;
-    padding: 2rem 0;
-    /* border: 1px solid black; */
-
-}
-
-.settingsSelect{
-    display: flex;
-    flex-direction: column;
-    /* margin: auto; */
-    padding-top: 1rem;
+  .setting h3 {
+    text-align: center;
+  }
+  img {
+    width: 65%;
+    text-align: center;
+    margin: auto;
+  }
 }
