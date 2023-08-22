@@ -41,10 +41,10 @@ const Home = ({ name, setName, fetchQuestions }) => {
           {error && <Alert variant="filled" severity="error">Fill all the fields first !</Alert>}
 
 
-          <TextField className="textField" label="Enter Your Name" variant="outlined" style={{ margin: 10 }} onChange={(e) => { setName(e.target.value) }} />
+          <TextField size="small" className="textField" label="Enter Your Name" variant="outlined" style={{ margin: 10 }} onChange={(e) => { setName(e.target.value) }} />
 
 
-          <TextField className="textField" select label="Select Category" variant="outlined" style={{ margin: 10 }} value={category}
+          <TextField size="small" className="textField" select label="Select Category" variant="outlined" style={{ margin: 10 }} value={category}
             onChange={(e) => { setCategory(e.target.value) }} >
             {
               Categories.map((cat) => {
@@ -54,7 +54,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
 
           </TextField>
 
-          <TextField className="textField" style={{ margin: 10 }} select label="Select Difficulty" variant="outlined"
+          <TextField size="small" className="textField" style={{ margin: 10 }} select label="Select Difficulty" variant="outlined"
             value={difficulty} onChange={(e) => { setDifficulty(e.target.value) }}>
             <MenuItem key='easy' value='easy'  >
               Easy

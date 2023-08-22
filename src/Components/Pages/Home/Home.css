@@ -6,7 +6,7 @@
   width: 95vw;
   max-width: 800px;
   margin: auto;
-
+  margin-top: 100px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px black;
@@ -42,6 +42,7 @@ img {
 @media screen and (max-width: 650px) {
   .container {
     flex-direction: column;
+    margin-top: 0;
   }
   .setting {
     width: 100%;
