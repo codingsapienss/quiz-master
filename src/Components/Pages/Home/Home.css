@@ -48,6 +48,7 @@ img {
   .container {
     flex-direction: column;
     margin-top: 50px;
+    margin-bottom: 50px;
     width: 60%;
     min-width: 300px;
   }

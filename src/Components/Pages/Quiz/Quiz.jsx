@@ -5,15 +5,15 @@ import Question from "../../Questions.jsx/Question";
 
 const Quiz = ({ name, setName, questions, setQuestions, score, setScore }) => {
   const [currentQues, setCurrentQues] = useState(0);
-  const [options, setOptions] = useState('');
+  const [options, setOptions] = useState("");
 
   useEffect(() => {
     setOptions(
       questions &&
-      handleShuffle([
-        questions[currentQues]?.correct_answer,
-        ...questions[currentQues]?.incorrect_answers,
-      ])
+        handleShuffle([
+          questions[currentQues]?.correct_answer,
+          ...questions[currentQues]?.incorrect_answers,
+        ])
     );
   }, [questions, currentQues]);
 
@@ -34,11 +34,20 @@ const Quiz = ({ name, setName, questions, setQuestions, score, setScore }) => {
             <span>Score : {score}</span>
           </div>
 
-          <Question setName={setName} currentQues={currentQues} setCurrentQues={setCurrentQues} questions={questions}
-            options={options} score={score} setScore={setScore} setQuestions={setQuestions} correct={questions[currentQues]?.correct_answer} />
+          <Question
+            setName={setName}
+            currentQues={currentQues}
+            setCurrentQues={setCurrentQues}
+            questions={questions}
+            options={options}
+            score={score}
+            setScore={setScore}
+            setQuestions={setQuestions}
+            correct={questions[currentQues]?.correct_answer}
+          />
         </>
       ) : (
-        <CircularProgress />
+        <CircularProgress className="circleProgress" />
       )}
     </div>
   );
